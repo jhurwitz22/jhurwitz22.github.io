@@ -43,6 +43,8 @@ function win(userChoice, computerChoice) {
     computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = `${convertToWord(userChoice).fontcolor('#2c9bc7')} beats ${convertToWord(computerChoice).fontcolor('#9340bd')}. You Win!`;
     actonMessage_div.innerHTML = winActionMessages();
+    document.getElementById(userChoice).classList.add('green-glow');
+    setTimeout(() => document.getElementById(userChoice).classList.remove('green-glow'), 300)
 };
 
 function loseActionMessages() {
@@ -63,6 +65,8 @@ function lose(userChoice, computerChoice) {
     userScore_span.innerHTML = userScore;
     result_p.innerHTML = `${convertToWord(computerChoice).fontcolor('#9340bd')} beats ${convertToWord(userChoice).fontcolor('#2c9bc7')}. You Lose!`;
     actonMessage_div.innerHTML = loseActionMessages();
+    document.getElementById(userChoice).classList.add('red-glow');
+    setTimeout(() => document.getElementById(userChoice).classList.remove('red-glow'), 300)
 };
 
 function drawActionMessages() {
@@ -82,6 +86,8 @@ function draw(userChoice, computerChoice) {
     userScore_span.innerHTML = userScore;
     result_p.innerHTML = `You both chose ${convertToWord(userChoice)}. It's a Draw!`
     actonMessage_div.innerHTML = drawActionMessages();
+    document.getElementById(userChoice).classList.add('grey-glow');
+    setTimeout(() => document.getElementById(userChoice).classList.remove('grey-glow'), 300)
 };
 
 function game(userChoice) {
